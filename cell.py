@@ -1,25 +1,20 @@
 from graphics import Point, Line
 
 class Cell:
-	def __init__(self, window=None):
+	def __init__(self, x1, y1, x2, y2, window=None):
 		self.has_left_wall = True
 		self.has_right_wall = True
 		self.has_top_wall = True
 		self.has_bottom_wall = True
 		self._window = window
-		self._x1 = None
-		self._x2 = None
-		self._y1 = None
-		self._y2 = None
-
-	def draw(self, x1, y1, x2, y2):
-		if not self._window:
-			return
-
 		self._x1 = x1
 		self._y1 = y1
 		self._x2 = x2
 		self._y2 = y2
+
+	def draw(self):
+		if not self._window:
+			return
 
 		if self.has_left_wall:
 			self._window.draw_line(Line(Point(self._x1, self._y1), Point(self._x1, self._y2)))

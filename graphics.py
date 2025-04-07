@@ -8,11 +8,11 @@ class Window:
 		self._canvas = Canvas(self._root, bg="white", width=width, height=height)
 		self._canvas.pack(fill=BOTH, expand=1)
 		self._running = False
-	
+
 	def redraw(self):
 		self._root.update_idletasks()
 		self._root.update()
-	
+
 	def wait_for_close(self):
 		self._running = True
 		while self._running:
